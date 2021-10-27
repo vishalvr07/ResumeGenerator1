@@ -1,0 +1,11 @@
+.button{
+    background: #807182;
+    border: 1px solid rgba(0, 0, 0, .1);
+    size: 16px;   
+    color:white;
+    padding:10px;
+    margin-bottom: 50px;
+    border-radius: 9px;
+    margin-left: 550px;
+ }
+ 

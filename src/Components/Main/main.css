@@ -1,0 +1,41 @@
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+  }
+  
+  .main {
+    width: 800px;
+    padding-left: 100px;
+  }
+  
+  .sub {
+    margin-top: -70px;
+    width: 400px;
+    
+  }
+  
+  .header {
+    margin-top: 40px;
+    padding-left: 100px; 
+  }
+  
+  .head {
+    margin-top: 40px;
+    font-size: 26px;
+  }
+  
+  .basic-text {
+    word-spacing: 4px;
+    line-height: 23px;
+    border-left: 1px solid grey;
+    height: auto;
+    padding-left: 20px;
+  }
+  
+  .colortext {
+    color: skyblue;
+    font-size: 13px;
+    padding-top: 5px;
+  }
+  
