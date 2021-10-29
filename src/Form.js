@@ -29,6 +29,15 @@ function Form() {
     //const [skills, setSkills] = useState("");
     const [langFirst, setLang1] = useState("");
     const [SecondLang, setLang2] = useState("");
+
+    //projects
+    const [project1, setProject1] = useState("");
+    const [project1Abt, setProject1Abt] = useState("");
+    const [project2, setProject2] = useState("");
+    const [project2Abt, setProject2Abt] = useState("");
+    const [project3, setProject3] = useState("");
+    const [project3Abt, setProject3Abt] = useState("");
+    
   
     //experience
     const [company, setComp] = useState("");
@@ -41,7 +50,14 @@ function Form() {
     const [RolesC, setRolesC] = useState("");
     const [RolesD, setRolesD] = useState("");
     const [RolesE, setRolesE] = useState("");
-  
+   
+    //skills
+    const [skill1, setskill1] = useState("");
+    const [skill2, setskill2] = useState("");
+    const [skill3, setskill3] = useState("");
+    const [skill4, setskill4] = useState("");
+    const [skill5, setskill5] = useState("");
+    const [skill6, setskill6] = useState("");
   
     //experience 2
     const [company2, setComp2] = useState("");
@@ -55,6 +71,17 @@ function Form() {
     const [Roles5, setRoles5] = useState("");
     const [Roles6, setRoles6] = useState("");
   
+
+    //experience 3
+    const [company3, setComp3] = useState("");
+    const [compLoc3, setCompLoc3] = useState("");
+    const [compDes3, setCompDes3] = useState("");
+    const [From3, setFrom3] = useState("");
+    const [To3, setTo3] = useState("");
+    const [Rolesx, setRolesx] = useState("");
+    const [Rolesy, setRolesy] = useState("");
+    const [Rolesz, setRolesz] = useState("");
+   
   
     //education
     const [College, setCollege] = useState("");
@@ -79,7 +106,7 @@ function Form() {
       const files = e.target.files;
       const data = new FormData();
       data.append("file", files[0]);
-      data.append("upload_preset", "vk2cdzte");
+      data.append("upload_preset", "ougwtdrm");
   
       const res = await fetch(
         "https://api.cloudinary.com/v1_1/daufictse/image/upload",
@@ -106,11 +133,11 @@ function Form() {
         isValid = false ;
     }
 
-    if(!email.includes('@') && email==''){
+    if(!email.includes('@') && email===''){
         EmailErr.Emailnotvalid = "Email not valid or empty"
     }
 
-    if(ph.trim().length != 10 ){
+    if(ph.trim().length !== 10 ){
         phErr.phnotvalid = "phone number not valid";
     }
     setLocErr(locErr);
@@ -137,9 +164,24 @@ function Form() {
           email: email,
           ph: ph,
           profile: profile,
-          //skills: skills,
+          //skills
+          skill1:skill1,
+          skill2:skill2,
+          skill3:skill3,
+          skill4:skill4,
+          skill5:skill5,
+          skill6:skill6,
+
+
           langFirst: langFirst,
           SecondLang: SecondLang,
+
+          //Projects
+          project1:project1,
+          project1Abt:project1Abt,
+          project2:project2,
+          project2Abt:project2Abt,
+      
           //experience
           company: company,
           compLoc: compLoc,
@@ -164,6 +206,17 @@ function Form() {
           Roles4: Roles4,
           Roles5: Roles5,
           Roles6: Roles6,
+
+          //experience3
+          company3: company3,
+          compLoc3: compLoc3,
+          compDes3: compDes3,
+          From3: From3,
+          To3: To3,
+          Rolesx: Rolesx,
+          Rolesy: Rolesy,
+          Rolesz: Rolesz,
+         
           
   
           //education
@@ -176,7 +229,7 @@ function Form() {
         })
       );
     
-      history.push("/Resume");
+      history.push("/cv");
     };
     
 }
@@ -254,6 +307,7 @@ function Form() {
                               setLoc(e.target.value);
                             }}
                           />
+                          
                           {Object.keys(locErr).map((key) => {
 
                                     return <div style={{color:"red"}}> {locErr[key]} </div>
@@ -360,6 +414,255 @@ return <div style={{color:"red"}}> {phErr[key]} </div>
                           }}
                         />
                       </div>
+
+ {/* Skills============================================================================================= */}
+ 
+ 
+                      <br />
+                      <br />
+                      <hr />
+                      <br />
+  
+                      <h2>Add Skills Info</h2>
+                      <div className="set">
+                        <div className="pers-name">
+                          <label htmlFor="pers-name"> Technical Skills</label>
+                          <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Skills#1"
+                            name="Skills"
+                            value={skill1}
+                            onChange={(e) => {
+                              setskill1(e.target.value);
+                            }}
+                          />
+
+                          
+                        </div>
+
+                        <div className="pers-name">
+                        <label htmlFor="pers-name"> Technical Skills</label>
+                        <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Skills#2"
+                            name="Skills"
+                            value={skill2}
+                            onChange={(e) => {
+                              setskill2(e.target.value);
+                            }}
+                          />
+
+                         
+                        </div>
+                        </div>
+
+
+                        <div className="set">
+                        <div className="pers-name">
+                           <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Skills#3"
+                            name="Skills"
+                            value={skill3}
+                            onChange={(e) => {
+                              setskill3(e.target.value);
+                            }}
+                          />
+
+                          
+                        </div>
+
+                        <div className="pers-name">
+                          
+                          <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Skills#4"
+                            name="Skills"
+                            value={skill4}
+                            onChange={(e) => {
+                              setskill4(e.target.value);
+                            }}
+                          />
+
+                         
+                        </div>
+                        </div>
+
+
+                        <div className="set">
+                        <div className="pers-name">
+  
+                          <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Skills #5"
+                            name="Skills"
+                            value={skill5}
+                            onChange={(e) => {
+                              setskill5(e.target.value);
+                            }}
+                          />
+
+                          
+                        </div>
+
+                        <div className="pers-name">
+                     
+                          <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Skills #6"
+                            name="Skills"
+                            value={skill6}
+                            onChange={(e) => {
+                              setskill6(e.target.value);
+                            }}
+                          />
+
+                         
+                        </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+{/* PROJECTS============================================================================================= */}
+  
+<br />
+                      <br />
+                      <hr />
+                      <br />
+                      <h2 className="Edit">Add Your Projects</h2>
+                      <div className="set">
+                        <div className="pers-name">
+                          <label htmlFor="pers-name">Name of the Project</label>
+                          <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Project #1"
+                            name="name"
+                            value={project1}
+                            onChange={(e) => {
+                              setProject1(e.target.value);
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      
+                      <div className="">
+                        <label htmlFor="">About Your Project </label>
+                        <input
+                          style={{
+                            width: "550px",
+                            lineHeight: "110px",
+                            marginTop: "0px",
+                          }}
+                          size="50"
+                          type="text"
+                          placeholder="About Project"
+                          value={project1Abt}
+                          onChange={(e) => {
+                            setProject1Abt(e.target.value);
+                          }}
+                        />
+                        </div>
+                         <br/>
+
+                        <div className="set">
+                        <div className="pers-name">
+                          <label htmlFor="pers-name">Name of the Project</label>
+                          <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Project #2"
+                            name="name"
+                            value={project2}
+                            onChange={(e) => {
+                              setProject2(e.target.value);
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      
+                      <div className="">
+                        <label htmlFor="">About Your Project </label> <br/>
+                        <input
+                          style={{
+                            width: "550px",
+                            lineHeight: "110px",
+                            marginTop: "0px",
+                          }}
+                          size="50"
+                          type="text"
+                          placeholder="About Project"
+                          value={project2Abt}
+                          onChange={(e) => {
+                            setProject2Abt(e.target.value);
+                          }}
+                        />
+                        </div>
+                         <br/>
+
+
+                        <div className="set">
+                        <div className="pers-name">
+                          <label htmlFor="pers-name">Name of the Project</label>
+                          <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Project #3"
+                            name="name"
+                            value={project3}
+                            onChange={(e) => {
+                              setProject3(e.target.value);
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      
+                      <div className="">
+                        <label htmlFor="">About Your Project </label> <br/>
+                        <input
+                          style={{
+                            width: "550px",
+                            lineHeight: "110px",
+                            marginTop: "0px",
+                          }}
+                          size="50"
+                          type="text"
+                          placeholder="About Project"
+                          value={project3Abt}
+                          onChange={(e) => {
+                            setProject3Abt(e.target.value);
+                          }}
+                        />
+                        </div>
+                        <br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
   {/* EXPERIeNCE============================================================================================= */}
   
                       <br />
@@ -682,6 +985,144 @@ return <div style={{color:"red"}}> {phErr[key]} </div>
   
   
                       </div>
+
+
+
+
+
+
+
+
+
+
+                      {/* Experience 3 ----------------------------------------------------------------------------------------------- */}
+  
+                      <br />
+                      <hr />
+                      <br />
+  
+                      <h3 className="Edit">Add the Last Experience</h3>
+                      <div className="set">
+                        <div className="pers-name">
+                          <label htmlFor="pers-name">Name of the organistaion</label>
+                          <input
+                            className="text-box"
+                            type="text"
+                            placeholder="Company"
+                            name="name"
+                            value={company3}
+                            onChange={(e) => {
+                              setComp3(e.target.value);
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <div className="set">
+                        <div className="pers-loc">
+                          <label htmlFor="Your-Location">Company Location</label>
+                          <input
+                            id="Your-Location"
+                            placeholder="Company Location"
+                            type="text"
+                            name="location"
+                            value={compLoc3}
+                            onChange={(e) => {
+                              setCompLoc3(e.target.value);
+                            }}
+                          />
+                        </div>
+                        <div className="pers-des">
+                          <label htmlFor="Designation">Your Designation</label>
+                          <input
+                            id="Designation"
+                            placeholder="Your Designation"
+                            type="text"
+                            name="Designation"
+                            value={compDes3}
+                            onChange={(e) => {
+                              setCompDes3(e.target.value);
+                            }}
+                          />
+                        </div>
+                      </div>
+  
+                      <div className="set">
+                        <div className="pers-loc">
+                          <label htmlFor="From">From</label>
+                          <input
+                            id="Email"
+                            placeholder="From"
+                            type="text"
+                            value={From3}
+                            onChange={(e) => {
+                              setFrom3(e.target.value);
+                            }}
+                          />
+                        </div>
+                        <div className="pers-des">
+                          <label htmlFor="Phone">To</label>
+                          <input
+                            id="Phone"
+                            placeholder="To"
+                            type="text"
+                            value={To3}
+                            onChange={(e) => {
+                              setTo3(e.target.value);
+                            }}
+                          />
+                        </div>
+                      </div>
+  
+                      <div className="">
+                        <label htmlfor="">Roles and Responsibilities </label> <br /> <br/>
+                        <input
+                          style={{
+                            width: "550px",
+                            lineHeight: "110px",
+                            marginTop: "0px",
+                          }}
+                          size="50"
+                          type="text"
+                          placeholder="Roles #1"
+                          value={Rolesx}
+                          onChange={(e) => {
+                            setRolesx(e.target.value);
+                          }}
+                        />  <br/><br/>
+  
+  <input
+                          style={{
+                            width: "550px",
+                            lineHeight: "110px",
+                            marginTop: "0px",
+                          }}
+                          size="50"
+                          type="text"
+                          placeholder="Roles #2"
+                          value={Rolesy}
+                          onChange={(e) => {
+                            setRolesy(e.target.value);
+                          }}
+                        />  <br/><br/>
+                         <input
+                          style={{
+                            width: "550px",
+                            lineHeight: "110px",
+                            marginTop: "0px",
+                          }}
+                          size="50"
+                          type="text"
+                          placeholder="Roles #3"
+                          value={Rolesz}
+                          onChange={(e) => {
+                            setRolesz(e.target.value);
+                          }}
+                        /> 
+ <br/><br/>
+  
+  
+                      </div>
+ 
   
                       {/* ---EDUCATION START------------------------------------------------------------------------------------------- */}
   

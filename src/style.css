@@ -55,6 +55,11 @@ margin-top: -30px;
    border-radius: 9px;
 }
 
+.btn:hover{
+	background: #807182;
+	size: 18px; 
+	cursor:pointer;
+}
 
 .All{
 	padding-top: 90px;
